@@ -1,0 +1,20 @@
+/* Voronoï explorer. Half-plane clipping creates 2D regions; clipping convex solids creates volumetric cells for the 3D mode.
+ * Page-specific layout and controls; shared theme colors are supplied by /Theme.css.
+ */
+main { max-width: 1600px; }
+.section-label { color: var(--site-accent); text-transform: uppercase; font-size: .75rem; letter-spacing: .12em; }
+.diagram-controls { display: flex; flex-wrap: wrap; align-items: center; gap: .75rem; padding: 1rem; margin: 1rem 0; border: 1px solid var(--site-border); border-radius: 12px; background: var(--site-surface); }
+.diagram-controls label { margin: 0; }
+.diagram-controls output { color: var(--site-accent); }
+#point-count { width: 160px; }
+#diagram { width: 100%; height: 65vh; min-height: 300px; display: block; background: var(--site-surface); border: 1px solid var(--site-border); border-radius: 12px; touch-action: none; cursor: crosshair; }
+#diagram:focus-visible { outline: 3px solid var(--site-accent); outline-offset: 3px; }
+#diagram-status { color: var(--site-muted); margin: 1rem 0; }
+
+.mode-controls { display: flex; align-items: center; gap: 1rem; }
+.mode-controls label { margin: 0; }
+.mode-controls select,#solid-shape { width: auto; }
+#solid-canvas { height: 65vh; min-height: 350px; border: 1px solid var(--site-border); border-radius: 12px; overflow: hidden; }
+#solid-canvas canvas { display: block; width: 100%; height: 100%; touch-action: none; }
+#solid-view[hidden],#planar-view[hidden] { display: none !important; }
+#solid-status { margin-top: 1rem; color: var(--site-muted); }
